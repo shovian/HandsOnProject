@@ -22,8 +22,7 @@
             <com.google.android.material.textfield.TextInputEditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-<<<<<<< Updated upstream
-                android:hint="@android:string/1" />
+                android:hint="hint" />
 
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -31,32 +30,17 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
-=======
-                android:hint="Input" />
-
-        </com.google.android.material.textfield.TextInputLayout>
-
-        <TableLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
-
->>>>>>> Stashed changes
             <TableRow
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
 
                 <Button
-<<<<<<< Updated upstream
                     android:id="@+id/button23"
-=======
-                    android:id="@+id/button1"
->>>>>>> Stashed changes
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="1" />
+                    android:text="Button" />
 
                 <Button
-<<<<<<< Updated upstream
                     android:id="@+id/button25"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -67,34 +51,17 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Button" />
-=======
-                    android:id="@+id/button2"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="2" />
-
-                <Button
-                    android:id="@+id/button3"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="3" />
->>>>>>> Stashed changes
 
                 <Button
                     android:id="@+id/button36"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-<<<<<<< Updated upstream
                     android:text="Button" />
-=======
-                    android:text="+" />
->>>>>>> Stashed changes
             </TableRow>
 
             <TableRow
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
-<<<<<<< Updated upstream
 
                 <Button
                     android:id="@+id/button28"
@@ -179,92 +146,5 @@
                     android:text="Button" />
             </TableRow>
         </TableLayout>
-=======
-
-                <Button
-                    android:id="@+id/button4"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="4" />
-
-                <Button
-                    android:id="@+id/button5"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="5" />
-
-                <Button
-                    android:id="@+id/button6"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="6" />
-
-                <Button
-                    android:id="@+id/button37"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="-" />
-            </TableRow>
-
-            <TableRow
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
-
-                <Button
-                    android:id="@+id/button7"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="7" />
-
-                <Button
-                    android:id="@+id/button8"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="8" />
-
-                <Button
-                    android:id="@+id/button9"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="9" />
-
-                <Button
-                    android:id="@+id/button30"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="/" />
-            </TableRow>
-
-            <TableRow
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
-
-                <Button
-                    android:id="@+id/button34"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="=" />
-
-                <Button
-                    android:id="@+id/button0"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="0" />
-
-                <Button
-                    android:id="@+id/button33"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="%" />
-
-                <Button
-                    android:id="@+id/button38"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="*" />
-            </TableRow>
-        </TableLayout>
-
->>>>>>> Stashed changes
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
