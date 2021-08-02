@@ -78,7 +78,10 @@ class MainActivity : AppCompatActivity() {
     fun onTapB0(@Suppress("UNUSED_PARAMETER")view: View){
         with(binding) { input.setText(input.text.toString() + "0") }
     }
-
+    fun formattingDecimal(num: Double) : String{
+        return if(num%1==0.0) num.toInt().toString()
+        else num.toString()
+    }
     fun onTapBEqual(@Suppress("UNUSED_PARAMETER") view: View){
         with(binding){
             if (input.text.toString().isNotEmpty() && stash.text.toString().isNotEmpty()){
@@ -86,24 +89,24 @@ class MainActivity : AppCompatActivity() {
                     Operation.PLUS -> {
                         val res =
                             input.text.toString().toDouble() + stash.text.toString().toDouble()
-                        input.setText(res.toString())
+                        input.setText(formattingDecimal(res))
                     }
                     Operation.MINUS -> {
                         val res =
                             stash.text.toString().toDouble() - input.text.toString().toDouble()
-                        input.setText(res.toString())
+                        input.setText(formattingDecimal(res))
                     }
                     Operation.MULTIPLY -> {
                         val res =
                             input.text.toString().toDouble() * stash.text.toString().toDouble()
-                        input.setText(res.toString())
+                        input.setText(formattingDecimal(res))
                     }
                     Operation.DIVIDE -> {
                         val divisor = input.text.toString().toDouble()
 
                         if (divisor != 0.0) {
                             val res = stash.text.toString().toDouble() / divisor
-                            input.setText(res.toString())
+                            input.setText(formattingDecimal(res))
                         } else {
                             AlertDialog
                                 .Builder(this@MainActivity)
