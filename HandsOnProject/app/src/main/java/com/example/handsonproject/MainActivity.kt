@@ -114,20 +114,20 @@ class MainActivity : AppCompatActivity() {
                                 .setMessage(getString(R.string.error_message))
                                 .show()
                         }
+                        stash.text = ""
                     }
                     Operation.MAIN_STATUS -> {
                       // do nothing
                     }
                 }
             }
-            stash.text = ""
             operation=Operation.MAIN_STATUS
         }
     }
     fun onTapBPlus(view: View){
         with(binding) {
             if (operation==Operation.MAIN_STATUS) {
-                stash.text = input.text.toString()
+                if(input.text.toString().isNotEmpty()) stash.text = input.text.toString()
                 operation = Operation.PLUS
             }
             else {
@@ -140,7 +140,7 @@ class MainActivity : AppCompatActivity() {
     fun onTapBMinus(view: View){
         with(binding) {
             if (operation==Operation.MAIN_STATUS) {
-                stash.text = input.text.toString()
+                if(input.text.toString().isNotEmpty()) stash.text = input.text.toString()
                 operation=Operation.MINUS
             }
             else {
@@ -153,7 +153,7 @@ class MainActivity : AppCompatActivity() {
     fun onTapBMultiply(view: View){
         with(binding) {
             if (operation==Operation.MAIN_STATUS) {
-                stash.text = input.text.toString()
+                if(input.text.toString().isNotEmpty()) stash.text = input.text.toString()
                 operation=Operation.MULTIPLY
             }
             else {
@@ -166,7 +166,7 @@ class MainActivity : AppCompatActivity() {
     fun onTapBDivide(view: View){
         with(binding) {
             if (operation==Operation.MAIN_STATUS) {
-                stash.text = input.text.toString()
+                if(input.text.toString().isNotEmpty()) stash.text = input.text.toString()
                 operation=Operation.DIVIDE
             }
             else {
