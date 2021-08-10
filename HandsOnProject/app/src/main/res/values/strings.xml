@@ -19,4 +19,5 @@
     <string name="_2">2</string>
     <string name="error_title">Err</string>
     <string name="error_message">"Division by zero is not allowed!"</string>
+    <string name="error_message_too_long">"Too much numbers!"</string>
 </resources>

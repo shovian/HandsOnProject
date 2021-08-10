@@ -3,6 +3,8 @@ package com.example.handsonproject
 
 import android.annotation.SuppressLint
 import android.os.Bundle
+import android.text.Editable
+import android.text.TextWatcher
 import android.view.LayoutInflater
 import android.view.View
 import androidx.appcompat.app.AlertDialog
@@ -24,6 +26,27 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
         with(binding){
             stash.text=""
+            input.addTextChangedListener(object : TextWatcher {
+                override fun afterTextChanged(s: Editable){}
+                override fun beforeTextChanged(
+                    s: CharSequence?,
+                    start: Int,
+                    count: Int,
+                    after: Int
+                ) {
+                }
+
+                override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
+                    if(input.text.toString().length>20) {
+                        input.setText("")
+                        AlertDialog
+                            .Builder(this@MainActivity)
+                            .setTitle(getString(R.string.error_title))
+                            .setMessage(getString(R.string.error_message_too_long))
+                            .show()
+                    }
+                }
+            })
         }
     }
 
@@ -85,28 +108,25 @@ class MainActivity : AppCompatActivity() {
     fun onTapBEqual(@Suppress("UNUSED_PARAMETER") view: View){
         with(binding){
             if (input.text.toString().isNotEmpty() && stash.text.toString().isNotEmpty()){
+                var res = 0.0
                 when (operation) {
                     Operation.PLUS -> {
-                        val res =
+                        res =
                             input.text.toString().toDouble() + stash.text.toString().toDouble()
-                        input.setText(formattingDecimal(res))
                     }
                     Operation.MINUS -> {
-                        val res =
+                        res =
                             stash.text.toString().toDouble() - input.text.toString().toDouble()
-                        input.setText(formattingDecimal(res))
                     }
                     Operation.MULTIPLY -> {
-                        val res =
+                        res =
                             input.text.toString().toDouble() * stash.text.toString().toDouble()
-                        input.setText(formattingDecimal(res))
                     }
                     Operation.DIVIDE -> {
                         val divisor = input.text.toString().toDouble()
 
                         if (divisor != 0.0) {
-                            val res = stash.text.toString().toDouble() / divisor
-                            input.setText(formattingDecimal(res))
+                            res = stash.text.toString().toDouble() / divisor
                         } else {
                             AlertDialog
                                 .Builder(this@MainActivity)
@@ -114,12 +134,13 @@ class MainActivity : AppCompatActivity() {
                                 .setMessage(getString(R.string.error_message))
                                 .show()
                         }
-                        stash.text = ""
                     }
                     Operation.MAIN_STATUS -> {
                       // do nothing
                     }
                 }
+                input.setText(formattingDecimal(res))
+                stash.text = ""
             }
             operation=Operation.MAIN_STATUS
         }
